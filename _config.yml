@@ -62,9 +62,9 @@ paginate: 10
 paginate_path: "/blog/page:num"
 
 # Collections
-collections:
-  category:
-    output: true
+#collections:
+#  category:
+#    output: true
 
 # Site defaults
 defaults:
@@ -72,12 +72,16 @@ defaults:
     values:
       layout: page
       hero_height: "is-small"
-  -
-    scope:
-      path: ""
-      type: category
-    values:
-      layout: "category"
+#  -
+#    scope:
+#      path: ""
+#      type: category
+#    values:
+#      layout: "category"
+
+include: [
+  '_categories'
+]
 
 # Exclude from processing.
 # The following items will not be processed, by default.
