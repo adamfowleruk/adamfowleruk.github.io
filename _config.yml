@@ -1,0 +1,112 @@
+title: Adam's Dev Experience Blog
+email: adam@adamfowler.org
+author: Adam Fowler
+description: >- 
+  A personal blog on all things Developer and DevOps
+  including Kubernetes and 12 factor apps.
+baseurl: "" 
+url: "https://blog.adamfowler.org.uk" 
+#logo: /img/blog.png
+gh_repo: https://github.com/adamfowleruk/adamfowleruk.github.io
+#markdown: redcarpet
+
+# Content replacement variables
+hero:
+  background-color: med-blue
+footer:
+  title: Getting Started
+  content: To help you get started, see the documentation.
+  cta_title:
+  cta_url: /docs
+  cta_text: Documentation
+
+footer_social_links:
+  Twitter:
+    fa_icon: fab fa-twitter
+    url: https://twitter.com/adamfowleruk
+  RSS:
+    fa_icon: fa fa-rss
+    url: feed.xml
+  GitHub:
+    fa_icon: fab fa-github
+    url: https://github.com/adamfowleruk
+
+#collections:
+#  - contributors
+#  - casestudies
+
+# Build settings
+#theme: bulma-clean-theme 
+remote_theme: chrisrhymes/bulma-clean-theme
+plugins:
+  - jekyll-feed
+  - github-pages
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-relative-links # Used to auto generate md links to html links
+  - jekyll-optional-front-matter # Parse Markdown files that do not have front-matter callouts
+  - jekyll-readme-index # use README.md as index.html
+  - jekyll-titles-from-headings # pull the page title from the first Markdown heading when none is specified.
+  - jekyll-paginate # pagination object for collections (e.g. posts)
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-spaceship # Lots of good plugins for showing diagrams, code
+
+permalink: /blog/:title
+sass:
+  sass_dir: css
+  style: :compressed
+
+# Blog properties
+paginate: 10
+paginate_path: "/blog/page:num"
+
+# Collections
+collections:
+  category:
+    output: true
+
+# Site defaults
+defaults:
+  -
+    values:
+      layout: page
+      hero_height: "is-small"
+  -
+    scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - NOTICE.txt
+  - LICENSE.txt
+  - .gitignore
+  - code_of_conduct.md
+  - contributing.md
+  - .travis.yml
+  - cibuild
+  - .github
+
+#redcarpet:
+#    extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]

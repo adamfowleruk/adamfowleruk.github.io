@@ -1,0 +1,14 @@
+- name: Blog
+  link: blog
+- name: Level 100
+  link: level-100
+  dropdown:
+    - name: CI/CD
+      link: level-100/cicd
+- name: Level 200
+  link: level-200
+- name: Level 300
+  link: level-300
+  dropdown:
+    - name: Aircraft Tracking
+      link: level-300/aircraft

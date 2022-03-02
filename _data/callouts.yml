@@ -1,0 +1,18 @@
+style: is-light
+items:
+  - title: New blog launched
+    subtitle: A new Dev Experience Blog
+    icon: fa-space-shuttle
+    description: >
+      I've changed my website to focus on its use as a
+      developer experience blog. 
+    call_to_action_name: View announcement
+    call_to_action_link: /blog/new-website
+  - title: Companion YouTube channel
+    subtitle: View the companion video content
+    icon: fa-youtube
+    description: >
+      I have a companion YouTube channel for this blog, please
+      visit and like the content.
+    call_to_action_name: Watch my YouTube channel
+    call_to_action_link: https://youtube.com/c/adamfowleruk
