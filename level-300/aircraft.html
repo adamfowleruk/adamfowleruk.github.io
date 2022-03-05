@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Aircraft Tracking project | Adam’s Dev Experience Blog</title>
+<meta name="generator" content="Jekyll v3.9.0">
+<meta property="og:title" content="Aircraft Tracking project">
+<meta name="author" content="adamfowleruk">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Aircraft Tracking Demo">
+<meta property="og:description" content="Aircraft Tracking Demo">
+<link rel="canonical" href="https://blog.adamfowler.org.uk/level-300/aircraft">
+<meta property="og:url" content="https://blog.adamfowler.org.uk/level-300/aircraft">
+<meta property="og:site_name" content="Adam’s Dev Experience Blog">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-03-02T00:00:00+00:00">
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"adamfowleruk"},"url":"https://blog.adamfowler.org.uk/level-300/aircraft","description":"Aircraft Tracking Demo","@type":"BlogPosting","headline":"Aircraft Tracking project","dateModified":"2022-03-02T00:00:00+00:00","datePublished":"2022-03-02T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.adamfowler.org.uk/level-300/aircraft"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- head scripts -->
+</head>
+
+  <body>
+    <nav class="navbar is-primary " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                Adam's Dev Experience Blog
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">Home</a>
+                
+                
+                    
+                    <a href="/blog" class="navbar-item ">Blog</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/level-100" class="navbar-link ">Level 100</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/level-100/cicd" class="navbar-item ">CI/CD</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <a href="/level-200" class="navbar-item ">Level 200</a>
+                    
+                
+                    
+                    <div class="navbar-item has-dropdown is-hoverable ">
+                        <a href="/level-300" class="navbar-link is-active">Level 300</a>
+                        <div class="navbar-dropdown">
+                            
+                            <a href="/level-300/aircraft" class="navbar-item ">Aircraft Tracking</a>
+                            
+                        </div>
+                    </div>
+                    
+                
+                
+            </div>
+
+            <div class="navbar-end">
+                
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+    
+        <section class="hero  is-small  is-bold is-primary">
+    <div class="hero-body ">
+        <div class="container">
+            <h1 class="title is-2">Aircraft Tracking project</h1>
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    <div class="content">
+
+    <p>Published: Mar 2, 2022 by adamfowleruk</p>
+
+    
+
+    <h1 id="aircraft-tracking-demo">Aircraft Tracking Demo</h1>
+
+<p>My <a href="https://aircraft.shared.12factor.xyz">Aircraft tracking demo</a>
+is a multi-repo project that has various software and data
+service components to track aircraft using ADS-B
+transponder signals. This is the same way flight radar 24 and
+similar websites track worldwide aircraft.</p>
+
+<p><iframe id="media-EQkenUcIV60" class="media" src="https://www.youtube.com/embed/EQkenUcIV60" title="" width="100%" height="350" style="max-width: 600px;outline: none" allow="encrypted-media; picture-in-picture" frameborder="0" allowfullscreen></iframe></p>
+
+<h2 id="business-problem-were-solving">Business problem we’re solving</h2>
+
+<p>Many systems today rely on a mix of live streaming data, ‘current state’ almost-live data, and historic data for analytics. Setting this up to track aircraft worldwide may be mind boggling to you right now, but I’ll show how you can apply a standard pattern to do this, and how simple applications are to write for a systems with many moving parts.</p>
+
+<p>The same pattern exists for any Internet of Things application where you’re collating data from many sources in a streaming manner. Many IT systems are moving from a batch processing to a live event basis now, making reliable messaging systems like RabbitMQ key to powering your applications.</p>
+
+<p>Example real world apps are the UK National Health Service’s (NHS) Spine-2 healthcare application integration backbone - supposedly the largest civilian messaging system in the world! This uses RabbitMQ at its heart to integrate all the apps.</p>
+
+<p>Another recent example was the UK’s Office of National Statistics (ONS) using RabbitMQ to process the 2021 census data as it was being collected by thousands of volunteers in the field.</p>
+
+<h2 id="links">Links</h2>
+
+<p>There are various external useful links for aspects of this project:-</p>
+
+<ul>
+  <li>Level 300 projects <a href="https://www.youtube.com/playlist?list=PLWoOSZbmib_f-aPTVAkNE438LdnjGrFau">YouTube playlist</a>
+</li>
+  <li>Application <a href="https://github.com/adamfowleruk/spring-adsb">Code GitHub repository</a>
+</li>
+  <li>Application <a href="https://github.com/adamfowleruk/demo-paving/tree/feature-5/helm/test/adsb-fullstack">HELM chart repository</a>
+</li>
+  <li>Application <a href="https://github.com/adamfowleruk/demo-paving/tree/feature-5/k8s/production/adsb-fullstack">raw K8S deployment YAML files</a>
+</li>
+  <li>Application building Concourse pipeline <a href="https://concourse.shared.12factor.xyz/teams/main/pipelines/adsb-images">Live view</a> and <a href="https://github.com/adamfowleruk/demo-paving/tree/feature-5/app-pipeline/test/adsb-shared">GitHub repository</a>
+</li>
+</ul>
+
+<h2 id="configuration-values">Configuration values</h2>
+
+<p>This level 300 guide links to existing and project specific videos. For general videos you will need specific configuration data. This is shown in the below table:-</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Value I use in the videos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>App namespace</td>
+      <td>adsb</td>
+    </tr>
+    <tr>
+      <td>App deployment subdomain</td>
+      <td>adsb.12factor.co.uk</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="component-tutorials">Component tutorials</h2>
+
+<p>The following is what we’re going to set up. I’ll add links to videos and files as the work is done:-</p>
+
+<ul>
+  <li>A ‘baseline’ k8s system with HTTPS ingress and TLS certificates under a target domain</li>
+  <li>An ‘apps’ k8s layer, built on baseline, that provides postgres, redis/gemfire, and RabbitMQ</li>
+  <li>Talk through how the apps are built and work at the code level</li>
+  <li>Creating a secure, re-usable, software supply chain for buildin, testing and deploying the apps to Kubernetes</li>
+  <li>Packaging the app and infrastructure configuration for easy deployment using Helm charts</li>
+  <li>Creating a set of users and permissions for remote Raspberry Pi’s running PiAware / Dump1090-fa to send their data to our app</li>
+  <li>Setting up a Raspberry Pi ADS-B ground stations</li>
+  <li>Configuration and deployment for a set of message driven apps to process incoming data
+    <ul>
+      <li>Copy the ‘latest’ record into an in-memory datastore (Redis/Gemfire)</li>
+      <li>Copy all ‘track’ data into a relational database (Postgres/Greenplum)</li>
+    </ul>
+  </li>
+  <li>Deployment of a set of UI and REST API apps:-
+    <ul>
+      <li>A rest-api to access all current aircraft data, a specific aircraft’s current data, and a specific aircrafts that full flight data</li>
+      <li>A ReactJS based website that renders the above REST data</li>
+    </ul>
+  </li>
+  <li>Security lockdown of all the above for a production workload</li>
+</ul>
+
+<p>Future optional enhancements to the base project above could include:-</p>
+
+<ul>
+  <li>Integration of something AI / ML like… I haven’t decided what yet…</li>
+  <li>Updating the UI to show updates just for visible aircraft, adding an idle viewer timeout, and streaming those updates rather than poll for them, saving bandwidth and processing power</li>
+  <li>A set of app monitoring tools to track application usage</li>
+  <li>High Availability and disaster recovery</li>
+  <li>Refactoring the deployment to use cloud hosted data services, if available</li>
+</ul>
+
+<h2 id="related-content">Related Content</h2>
+
+<p>Other related posts on this blog site:-</p>
+
+<ul>
+  <li><a href="/project/aircraft">All Aircraft tracking project posts</a></li>
+  <li><a href="/level-300">A list of all Level 300 projects</a></li>
+</ul>
+
+</div>
+
+<div class="tags">
+    
+</div>
+
+
+<p><strong>Share</strong></p>
+<div class="buttons ">
+    <a class="button is-medium is-facebook" onclick="window.open('https://www.facebook.com/share.php?u=https://blog.adamfowler.org.uk/level-300/aircraft');">
+        <span class="icon"><i class="fab fa-facebook fa-lg"></i></span>
+    </a>
+    <a class="button is-medium is-twitter" onclick="window.open('https://twitter.com/intent/tweet?text=https://blog.adamfowler.org.uk/level-300/aircraft');">
+        <span class="icon"><i class="fab fa-twitter fa-lg"></i></span>
+    </a>
+    <a class="button is-medium is-linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://blog.adamfowler.org.uk/level-300/aircraft&amp;title=Aircraft+Tracking+project&amp;summary=&amp;source=');">
+        <span class="icon"><i class="fab fa-linkedin fa-lg"></i></span>
+    </a>
+    <a class="button is-medium is-reddit" onclick="window.open('https://reddit.com/submit?url=https://blog.adamfowler.org.uk/level-300/aircraft');">
+        <span class="icon"><i class="fab fa-reddit fa-lg"></i></span>
+    </a>
+</div>
+
+
+
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+
+        <div class="content is-small has-text-centered">
+            <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+        </div>
+    </div>
+</footer>
+
+    
+    <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts -->
+</body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://blog.adamfowler.org.uk/level-300/aircraft</loc>
+<lastmod>2022-03-02T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://blog.adamfowler.org.uk/level-100/cicd</loc>
+<lastmod>2022-03-02T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://blog.adamfowler.org.uk/blog/new-website</loc>
+<lastmod>2022-03-02T06:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://blog.adamfowler.org.uk/project/aircraft</loc>
+</url>
+<url>
+<loc>https://blog.adamfowler.org.uk/blog</loc>
+</url>
+<url>
+<loc>https://blog.adamfowler.org.uk/</loc>
+</url>
+<url>
+<loc>https://blog.adamfowler.org.uk/level-100</loc>
+</url>
+<url>
+<loc>https://blog.adamfowler.org.uk/level-200</loc>
+</url>
+<url>
+<loc>https://blog.adamfowler.org.uk/level-300</loc>
+</url>
+</urlset>

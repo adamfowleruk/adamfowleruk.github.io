@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://blog.adamfowler.org.uk/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.adamfowler.org.uk/" rel="alternate" type="text/html" /><updated>2022-03-05T23:14:05+00:00</updated><id>https://blog.adamfowler.org.uk/feed.xml</id><title type="html">Adam’s Dev Experience Blog</title><subtitle>A personal blog on all things Developer and DevOps including Kubernetes and 12 factor apps.</subtitle><author><name>Adam Fowler</name></author><entry><title type="html">New Developer Experience website launched</title><link href="https://blog.adamfowler.org.uk/blog/new-website" rel="alternate" type="text/html" title="New Developer Experience website launched" /><published>2022-03-02T06:00:00+00:00</published><updated>2022-03-02T06:00:00+00:00</updated><id>https://blog.adamfowler.org.uk/blog/new-website</id><content type="html" xml:base="https://blog.adamfowler.org.uk/blog/new-website">&lt;p&gt;This is my new website to replace the old Wordpress adamfowler.org site.&lt;/p&gt;
+
+&lt;p&gt;This blog is about all things in a developers life. I cover
+12 factor apps, CI/CD best practice, secure software supply
+chains, Kubernetes, and anything else in the DevOps realm.&lt;/p&gt;</content><author><name>adamfowleruk</name></author><summary type="html">This is my new website to replace the old Wordpress adamfowler.org site.</summary></entry><entry><title type="html">Aircraft Tracking project</title><link href="https://blog.adamfowler.org.uk/level-300/aircraft" rel="alternate" type="text/html" title="Aircraft Tracking project" /><published>2022-03-02T00:00:00+00:00</published><updated>2022-03-02T00:00:00+00:00</updated><id>https://blog.adamfowler.org.uk/level-300/aircraft</id><content type="html" xml:base="https://blog.adamfowler.org.uk/level-300/aircraft">&lt;h1 id=&quot;aircraft-tracking-demo&quot;&gt;Aircraft Tracking Demo&lt;/h1&gt;
+
+&lt;p&gt;My &lt;a href=&quot;https://aircraft.shared.12factor.xyz&quot;&gt;Aircraft tracking demo&lt;/a&gt;
+is a multi-repo project that has various software and data
+service components to track aircraft using ADS-B
+transponder signals. This is the same way flight radar 24 and
+similar websites track worldwide aircraft.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://youtu.be/EQkenUcIV60&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;business-problem-were-solving&quot;&gt;Business problem we’re solving&lt;/h2&gt;
+
+&lt;p&gt;Many systems today rely on a mix of live streaming data, ‘current state’ almost-live data, and historic data for analytics. Setting this up to track aircraft worldwide may be mind boggling to you right now, but I’ll show how you can apply a standard pattern to do this, and how simple applications are to write for a systems with many moving parts.&lt;/p&gt;
+
+&lt;p&gt;The same pattern exists for any Internet of Things application where you’re collating data from many sources in a streaming manner. Many IT systems are moving from a batch processing to a live event basis now, making reliable messaging systems like RabbitMQ key to powering your applications.&lt;/p&gt;
+
+&lt;p&gt;Example real world apps are the UK National Health Service’s (NHS) Spine-2 healthcare application integration backbone - supposedly the largest civilian messaging system in the world! This uses RabbitMQ at its heart to integrate all the apps.&lt;/p&gt;
+
+&lt;p&gt;Another recent example was the UK’s Office of National Statistics (ONS) using RabbitMQ to process the 2021 census data as it was being collected by thousands of volunteers in the field.&lt;/p&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+
+&lt;p&gt;There are various external useful links for aspects of this project:-&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Level 300 projects &lt;a href=&quot;https://www.youtube.com/playlist?list=PLWoOSZbmib_f-aPTVAkNE438LdnjGrFau&quot;&gt;YouTube playlist&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Application &lt;a href=&quot;https://github.com/adamfowleruk/spring-adsb&quot;&gt;Code GitHub repository&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Application &lt;a href=&quot;https://github.com/adamfowleruk/demo-paving/tree/feature-5/helm/test/adsb-fullstack&quot;&gt;HELM chart repository&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Application &lt;a href=&quot;https://github.com/adamfowleruk/demo-paving/tree/feature-5/k8s/production/adsb-fullstack&quot;&gt;raw K8S deployment YAML files&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Application building Concourse pipeline &lt;a href=&quot;https://concourse.shared.12factor.xyz/teams/main/pipelines/adsb-images&quot;&gt;Live view&lt;/a&gt; and &lt;a href=&quot;https://github.com/adamfowleruk/demo-paving/tree/feature-5/app-pipeline/test/adsb-shared&quot;&gt;GitHub repository&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;configuration-values&quot;&gt;Configuration values&lt;/h2&gt;
+
+&lt;p&gt;This level 300 guide links to existing and project specific videos. For general videos you will need specific configuration data. This is shown in the below table:-&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Setting&lt;/th&gt;
+      &lt;th&gt;Value I use in the videos&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;App namespace&lt;/td&gt;
+      &lt;td&gt;adsb&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;App deployment subdomain&lt;/td&gt;
+      &lt;td&gt;adsb.12factor.co.uk&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;component-tutorials&quot;&gt;Component tutorials&lt;/h2&gt;
+
+&lt;p&gt;The following is what we’re going to set up. I’ll add links to videos and files as the work is done:-&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A ‘baseline’ k8s system with HTTPS ingress and TLS certificates under a target domain&lt;/li&gt;
+  &lt;li&gt;An ‘apps’ k8s layer, built on baseline, that provides postgres, redis/gemfire, and RabbitMQ&lt;/li&gt;
+  &lt;li&gt;Talk through how the apps are built and work at the code level&lt;/li&gt;
+  &lt;li&gt;Creating a secure, re-usable, software supply chain for buildin, testing and deploying the apps to Kubernetes&lt;/li&gt;
+  &lt;li&gt;Packaging the app and infrastructure configuration for easy deployment using Helm charts&lt;/li&gt;
+  &lt;li&gt;Creating a set of users and permissions for remote Raspberry Pi’s running PiAware / Dump1090-fa to send their data to our app&lt;/li&gt;
+  &lt;li&gt;Setting up a Raspberry Pi ADS-B ground stations&lt;/li&gt;
+  &lt;li&gt;Configuration and deployment for a set of message driven apps to process incoming data
+    &lt;ul&gt;
+      &lt;li&gt;Copy the ‘latest’ record into an in-memory datastore (Redis/Gemfire)&lt;/li&gt;
+      &lt;li&gt;Copy all ‘track’ data into a relational database (Postgres/Greenplum)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Deployment of a set of UI and REST API apps:-
+    &lt;ul&gt;
+      &lt;li&gt;A rest-api to access all current aircraft data, a specific aircraft’s current data, and a specific aircrafts that full flight data&lt;/li&gt;
+      &lt;li&gt;A ReactJS based website that renders the above REST data&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Security lockdown of all the above for a production workload&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Future optional enhancements to the base project above could include:-&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Integration of something AI / ML like… I haven’t decided what yet…&lt;/li&gt;
+  &lt;li&gt;Updating the UI to show updates just for visible aircraft, adding an idle viewer timeout, and streaming those updates rather than poll for them, saving bandwidth and processing power&lt;/li&gt;
+  &lt;li&gt;A set of app monitoring tools to track application usage&lt;/li&gt;
+  &lt;li&gt;High Availability and disaster recovery&lt;/li&gt;
+  &lt;li&gt;Refactoring the deployment to use cloud hosted data services, if available&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;related-content&quot;&gt;Related Content&lt;/h2&gt;
+
+&lt;p&gt;Other related posts on this blog site:-&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/project/aircraft&quot;&gt;All Aircraft tracking project posts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/level-300&quot;&gt;A list of all Level 300 projects&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>adamfowleruk</name></author><summary type="html">Aircraft Tracking Demo</summary></entry><entry><title type="html">CI/CD</title><link href="https://blog.adamfowler.org.uk/level-100/cicd" rel="alternate" type="text/html" title="CI/CD" /><published>2022-03-02T00:00:00+00:00</published><updated>2022-03-02T00:00:00+00:00</updated><id>https://blog.adamfowler.org.uk/level-100/cicd</id><content type="html" xml:base="https://blog.adamfowler.org.uk/level-100/cicd">&lt;h1 id=&quot;cicd&quot;&gt;CI/CD&lt;/h1&gt;
+
+&lt;p&gt;CI/CD stands for “Continuous Integration / Continuous Deployment”
+and refers to the two broad steps in taking code from a
+source code repository (usually Git based) and getting it ready
+for running somewhere.&lt;/p&gt;
+
+&lt;p&gt;An individual CI/CD process definition is usually called a ‘pipeline’.&lt;/p&gt;
+
+&lt;h2 id=&quot;continuous-integration-ci&quot;&gt;Continuous Integration (CI)&lt;/h2&gt;
+
+&lt;p&gt;CI pipelines typically specify how to build source code
+into an executable form, and any tests and packaging
+that must be applied to this built code.&lt;/p&gt;
+
+&lt;p&gt;It is usual for a CI pipeline to be ran on a new source code
+contribution (Pull Request) before accepting it into a
+repository. This is to ensure the contribution doesn’t
+break anything, and all tests for the project still pass.&lt;/p&gt;
+
+&lt;p&gt;This stage can also include static and dynamic code analysis
+to spot performance and security problems, the generation
+of documentation and API definitions based on source code,
+or any single-repository actions that need to occur.&lt;/p&gt;
+
+&lt;h3 id=&quot;in-repo-or-out-of-repo-ci&quot;&gt;In repo or out of repo CI&lt;/h3&gt;
+
+&lt;p&gt;There are two common types of CI pipelines in use.&lt;/p&gt;
+
+&lt;p&gt;In repo pipelines exist within the code repository to
+which the steps apply. If the code is on GitHub, for example,
+you may see a .github/workflows folder. An example of this is
+the &lt;a href=&quot;https://github.com/adamfowleruk/adamfowleruk.github.io/tree/main/.github/workflows&quot;&gt;folder containing a pipeline used to build this website!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Out of repo pipelines exist where an organisation has
+several projects that all need to use a common build pipeline
+(often called a buildpack) in order to ensure consistent
+build, containerisation, and testing standards are applied.&lt;/p&gt;
+
+&lt;p&gt;Which you need to use depends on your org. If you’re just starting
+out, then in-repo are supremely convenient. Once you get to 
+multiple teams of developers, however, you may benefit from a 
+more standardised approach that means you don’t have to keep 
+redefining the same workflow per project.&lt;/p&gt;
+
+&lt;h2 id=&quot;continuous-delivery-cd&quot;&gt;Continuous Delivery (CD)&lt;/h2&gt;
+
+&lt;p&gt;Once the thing is built, you need to run the thing somewhere.
+This is typically to allow integration testing with other
+components…&lt;/p&gt;
+
+&lt;p&gt;“WAIT why doesn’t Continuous INTEGRATION do that?” - 
+continuous integration integrates small software libraries into
+a project, but doesn’t integrate the built thing to other built
+things. This is what CD is for. You need to deploy something
+in order to perform this level os integration testing.&lt;/p&gt;
+
+&lt;p&gt;“Oh, ok. Carry on!”&lt;/p&gt;
+
+&lt;p&gt;The first target for component testing may be in a development 
+test environment. Should your new component pass this, then
+the code branch may be ‘promoted’ as ready for a decision to
+be published onto a ‘pre prod’ (Pre production) or ‘test’
+system.&lt;/p&gt;
+
+&lt;p&gt;A development cluster is typically the target of a CD pipeline.
+This takes the latest ‘develop’ branch of code, grabs the
+‘debug’ built version from the CI process, and runs it alongside
+the latest version of the other components in your complex
+software project.&lt;/p&gt;
+
+&lt;p&gt;A ‘pre prod’ or ‘non prod’ or ‘qa’ or ‘pen test’ environment
+is then used for components which have passed all tests and
+where the overall software product manager (NOT project manager)
+decides its ready for external review.&lt;/p&gt;
+
+&lt;p&gt;Whilst you may think this is for users to review, typically
+in an agile project users will have been involved waaaaaay
+before this in the dev cycle. So pre-prod testing is typically
+reserved for testing performance, running penetration testing
+to ensure system security, and testing failover, backup, restore,
+upgrade, database migration, and other processes prior to
+inflicting the new software version on users in the production
+system.&lt;/p&gt;
+
+&lt;p&gt;The CD system is what stands between you and pushing out a flawed
+release onto your users. So it’s crucially important although
+few people manage this very well. (personal opinion) This is
+perhaps because every organisations environment is different,
+and so there’s a lot of variation to manage.&lt;/p&gt;
+
+&lt;h2 id=&quot;approaches-imperative-versus-declarative&quot;&gt;Approaches: Imperative versus declarative&lt;/h2&gt;
+
+&lt;p&gt;An imperative approach is like a recipe. Do A then B then C and if
+the cake rises, happy days!&lt;/p&gt;
+
+&lt;p&gt;A declarative approach says “A finished cake depends upon 
+ingredients being prepared and placed in the oven for a while. 
+Has that happened yet?”. You typically specify ‘inputs’ and ‘outputs’ and tag which inputs cause a step to be triggered
+if the input is changed.&lt;/p&gt;
+
+&lt;p&gt;For small projects - like this website using GitHub Actions to 
+build it - an imperative approach is fine.&lt;/p&gt;
+
+&lt;p&gt;For large projects with many build versions, options,
+deployment platforms, and complexity, then using the declarative
+model and leaving the ordering of tasks up to your CI/CD
+platform is by far the best approach. It’s much more stable,
+and you can build up your process over time by adding building
+blocks.&lt;/p&gt;
+
+&lt;p&gt;It won’t surprise you to learn that I prefer the declarative
+approach for all multi-repository projects.&lt;/p&gt;
+
+&lt;h2 id=&quot;declarative-cicdtools-&quot;&gt;Declarative CI/CDtools:-&lt;/h2&gt;
+
+&lt;h3 id=&quot;concourse&quot;&gt;&lt;a href=&quot;https://concourse-ci.org&quot;&gt;Concourse&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The generic thing do-er from and supported by VMware Tanzu (formerly Pivotal Labs). (Declaration of interest: I work at VMware). This is an opensource tool that can run in Kubernetes, on a VM, or on your laptop.&lt;/p&gt;
+
+&lt;p&gt;Particularly good when you need ‘remote workers’. A good example of this is needing to run MacOS workers
+as they’re the only computers that can build MacOS and iPadOS and iOS mobile applications.&lt;/p&gt;
+
+&lt;p&gt;No pipeline build UI, but has a great UI for putting on a monitor
+at the edge of your dev team to monitor live progress. We do this
+in our VMware Tanzu offices all the time. Here’s a couple of
+examples:-&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;My &lt;a href=&quot;/level-300/aircraft&quot;&gt;Aircraft tracking demo&lt;/a&gt; has its &lt;a href=&quot;https://concourse.shared.12factor.xyz/teams/main/pipelines/adsb-images&quot;&gt;own Concourse pipeline&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Concourse itself uses &lt;a href=&quot;https://ci.concourse-ci.org/teams/main/pipelines/concourse&quot;&gt;Concourse to build itself!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Very strong documentation and examples are provided, and a
+list of Concourse ‘resources’ (action types) are provided on
+their website so finding plugins is easy.&lt;/p&gt;
+
+&lt;h2 id=&quot;tekton&quot;&gt;Tekton&lt;/h2&gt;
+
+&lt;p&gt;The new kid on the block. Think Concourse but re-engineered
+to fit in with exactly how Kubernetes works. Inputs/outputs
+look eerily familiar if you’ve used Concourse.&lt;/p&gt;
+
+&lt;p&gt;As the new kid on the block, the documentation is god awful
+and disjointed. It uses K8S CRDs and K8S yaml format to
+define pipelines. This may or may not be desirable to your
+teams.&lt;/p&gt;
+
+&lt;h2 id=&quot;imperative-cicd-tools-&quot;&gt;Imperative CI/CD tools:-&lt;/h2&gt;
+
+&lt;h3 id=&quot;github-actions&quot;&gt;GitHub Actions&lt;/h3&gt;
+
+&lt;p&gt;An in-repo options for building your projects. CI tool with no 
+UI to create the pipelines. I use this for building this website 
+and publishing to GitHub Pages. Simple,
+commonly used, and Just Works. The Ronseal of imperative CI.&lt;/p&gt;
+
+&lt;h3 id=&quot;gitlab-actions&quot;&gt;GitLab Actions&lt;/h3&gt;
+
+&lt;p&gt;Another in-repo option. GitLab is opensource, although most
+people graduate to the Enterprise (paid for) edition pretty
+quickly. CI tool with no UI to create the pipelines. Similar 
+to GitHub Actions. Kinda OK if you like GitLab anyway.&lt;/p&gt;
+
+&lt;h3 id=&quot;azure-devops-actions&quot;&gt;Azure DevOps Actions&lt;/h3&gt;
+
+&lt;p&gt;Another in-repo option. Very nice UI for defining the
+processes. If using Azure, definitely consider this. Many
+of my customers use Azure DevOps Actions as it has nice
+integration with Azure AD and 2 factor authentication for
+their system single sign on. Not as many plugins in my 
+experience as GitHub Actions or Concourse.&lt;/p&gt;
+
+&lt;h2 id=&quot;ansible&quot;&gt;Ansible&lt;/h2&gt;
+
+&lt;p&gt;God awful imperative way of doing things. Uses the concept
+of ‘playbooks’. Seems easy at first, but as soon as you
+go beyond trivial projects, the playbook concept becomes 
+quite fragile and hard to maintain.&lt;/p&gt;
+
+&lt;p&gt;Ansible can be used for standing up environments, CI and CD.
+Because of its broad use it’s very common, especially in IBM
+shops as RedHat push this very hard in their platform.&lt;/p&gt;
+
+&lt;p&gt;Please don’t inflict Ansible on your DevOps teams.&lt;/p&gt;</content><author><name>adamfowleruk</name></author><summary type="html">CI/CD</summary></entry></feed>
