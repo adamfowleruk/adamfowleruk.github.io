@@ -9,6 +9,8 @@ This blog is about all things in a developers life. I cover
 12 factor apps, CI/CD best practice, secure software supply
 chains, Kubernetes, and anything else in the DevOps realm.
 
+![](https://www.youtube.com/watch?v=PgKTFaqFv1M)
+
 The website is split into levels:-
 
 - [Level 100 Explainers](/level-100): Introductory material for key terms and concepts. Like a detailed glossary for terminology
@@ -16,6 +18,8 @@ The website is split into levels:-
 - [Level 300 Projects](/level-300): Detailed project based examples. 'Real world' projects, or as near as I can make them, linking level 200 activities together for a defined outcome
 
 This should provide a range of material suitable for all levels.
+
+There is also a [publicly readable Miro board](https://miro.com/app/board/uXjVOMUTxfc=/) for this blog and all the topics and how-tos covered.
 
 All material on this website is licensed under Creative Commons 
 Zero license version 1.0. This allows all code samples or 

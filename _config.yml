@@ -114,3 +114,13 @@ exclude:
 
 #redcarpet:
 #    extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
+
+jekyll-spaceship:
+  element-processor:
+    css:
+      - a:                                     # Replace all `a` tags
+          props:
+            class: ['(^.*$)', '\0 ext-link']   # Add `ext-link` to class by regex pattern
+            target: _blank                     # Replace `target` value to `_blank`
+            rel: noopener noreferrer           # Replace `rel` value to `noopener noreferrer`
+            
